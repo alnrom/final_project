@@ -33,7 +33,7 @@ class RecipeRequirement(models.Model):
 class Purchase(models.Model):
     menu_item = models.ForeignKey(MenuItem, on_delete=models.CASCADE)
     timestamp = models.DateTimeField(auto_now_add=True)
-    quantity = models.IntegerField(max_length=10, null=True, default=1)
+    quantity = models.IntegerField(null=True, default=1)
 
     def __str__(self):
         return f"{self.menu_item.title} purchased at {self.timestamp.strftime('%Y-%m-%d %H:%M')}"
